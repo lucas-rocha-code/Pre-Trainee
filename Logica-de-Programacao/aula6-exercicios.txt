@@ -1,0 +1,68 @@
+//Calculo de Idade
+
+algoritmo "Creuza1"
+var
+    ano_atual, ano_nasc, idade: Inteiro
+inicio
+    Escreval("Em que anos nós estamos?")
+    Leia(ano_atual)
+    Escreval("Em que ano eu nasci?")
+    Leia(ano_nasc)
+    idade <- ano_atual-ano_nasc
+    Escreval("Minha idade é ", idade)
+fimalgoritmo
+
+//Conversor de dolares e reais (olhei a cotação atual)
+
+algoritmo "Creuza2"
+var
+    reais, dolares: Real
+inicio
+    Escreval("Quantos reais eu tenho? R$")
+    Leia(reais)
+    dolares <- reais/5.16
+    Escreva("Posso ter US$ ", dolares)
+fimalgoritmo
+
+//Conversor de temperatura
+
+algoritmo "Creuza3"
+
+var
+    f, c: Real
+inicio
+    Escreval("Qual a temperatura aqui?")
+    Leia(f)
+    c <- (f-32)/1.8
+    Escreva("No Brasil estaria ", c:4:1)
+fimalgoritmo
+
+//Calculo de taxas
+
+algoritmo "Creuza4"
+
+var
+    preco, imposto: Real
+inicio
+    Escreval("Qual o preço do produto? US$")
+    Leia(preco)
+    imposto <- (preco*60)/100
+    Escreva("O imposto será de US$", imposto:5:2)
+fimalgoritmo
+
+//Emprestimo no banco (desafio extra, onde ele não deu o código final)
+
+algoritmo "Creuza5"
+
+var
+    emprestimo, imposto, parcelas, emprestimo_juros, valor_total, valor_parcela: Real
+inicio
+    Escreval("Qual será o valor do emprestimo?")
+    Leia(emprestimo)
+    emprestimo_juros <- (emprestimo*20)/100
+    valor_total <- emprestimo+emprestimo_juros
+    Escreval("Em quantas parcelas você irá parcelar?")
+    Leia(parcelas)
+    valor_parcela <- valor_total/parcelas
+    Escreval("O valor final do emprestimo será de ", valor_total, ". Você pagará ", parcelas, " parcelas de ", valor_parcela)
+fimalgoritmo

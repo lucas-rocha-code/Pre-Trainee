@@ -1,1 +1,0 @@
-Eu estou usando arquivos TXT para compartilhar meu progresso e colocar o código final de cada aula. Inclusive, eu estou usando um site para rodar o Portugol para não precisar instalar um programa que será pouco usado no futuro.

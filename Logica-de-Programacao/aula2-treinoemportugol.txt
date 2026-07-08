@@ -1,4 +1,4 @@
-#Código que ele ensina no vídeo (depois das outras versões mais simples):
+//Código que ele ensina no vídeo (depois das outras versões mais simples):
 algoritmo "primeiro”
 var
     msg: caractere
