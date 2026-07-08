@@ -1,0 +1,25 @@
+#Código inicial:
+
+Algoritmo “valores”
+var
+    N1, N2, S: Inteiro
+Inicio :
+    Escreva (“Digite um ndmero: ”)
+    Leia (N1)
+    Escreva (“Digite outro numero: ”)
+    Leia (N2) -
+    S <- N1 + N2
+    Escreva (“A soma é ”, S)
+FimAlgoritmo
+
+#Código final com todos os conceitos da aula:
+
+algoritmo "conversor”
+var
+    angulo, S: Real
+inicio
+    Escreva("Informe um angulo: ")
+    Leia (angulo)
+    S <- Sen(GraupRad(angulo))
+    Escreva("O Seno de ", angulo, "e igual a ", S)
+fimalgoritmo
