@@ -1,0 +1,69 @@
+//Códigos dos exércicios propostos por ele no fim da aula 8.
+
+//Exercicio 1 "Aproveitamento do aluno"
+
+algoritmo "Aproveitamento"
+
+var
+  N1, N2, M: real
+  AP: caractere
+inicio
+  Escreval(" Calcule a nota e o aproveitamento do seu filho")
+  Escreval("Primeira nota: ")
+  Leia(N1)
+  Escreval("Segunda nota: ")
+  Leia(N2)
+  M <- (N1+N2)/2
+  Se (M <= 10) e (M >=9) entao
+    AP <- "A"
+  Senao
+    Se (M < 9) e (M >= 8) entao
+    AP <- "B"
+    Senao
+      Se (M < 8) e (M >= 7) entao
+      AP <- "C"
+      Senao
+        Se (M < 7) e (M >= 6) entao
+        AP <- "D"
+        Senao
+          Se (M < 6) e (M >= 5) entao
+          AP <- "E"
+          Senao
+          AP <- "F"
+          fimse
+        fimse
+      fimse
+    fimse
+  fimse
+  Escreval("Média: ", M)
+  Escreval("Aproveitamento: ", AP)
+fimalgoritmo
+
+//Exercicio 2 "Uma partida de futebol"
+//Obs: tive que criar um "Se" para evitar que o numero da diferença seja negativo, caso o número do primeiro time seja menor que o do segundo.
+
+algoritmo "partida"
+
+var
+  gols_b, gols_m, dif: inteiro
+  status: caracter
+inicio
+  Escreval("Quantos gols do BANGU? ")
+  Leia(gols_b)
+  Escreval("Quantos gols do MADUREIRA? ")
+  Leia(gols_m)
+  Se (gols_b) >= (gols_m) entao
+    dif <- gols_b-gols_m
+  senao
+    dif <- (gols_b-gols_m)*-1
+  fimse
+  Escreval("Diferença: ", dif)
+  escolha dif
+    Caso 0
+      Escreval("Empate")
+    Caso 1, 2, 3, 4
+      Escreval("Partida normal")
+    outrocaso
+      Escreval("Goleada!")
+  fimescolha
+fimalgoritmo
