@@ -1,0 +1,53 @@
+//Códigos dos exércicios propostos por ele no fim da aula 9.
+
+//Exercicio 1 "Contagem Inteligente"
+
+algoritmo "contagem_inteligente"
+var
+  contador, comeco, final: inteiro
+inicio
+  Escreval("Inicio: ")
+  leia(comeco)
+  Escreval("Fim: ")
+  Leia(final)
+  Escreval("CONTANDO...")
+  contador <- comeco
+  se (comeco) < (final) entao
+    enquanto (contador) <= (final) faca
+      Escreva(contador, "... ")
+      contador <- contador + 1
+      
+    fimenquanto
+  senao
+      enquanto (contador) >= (final) faca
+        Escreva(contador, "... ")
+        contador <- contador - 1
+      fimenquanto
+  fimse
+  Escreval("Fim da contagem!")
+fimalgoritmo
+
+//Exercicio 2 "Melhor aluno da turma"
+
+algoritmo "melhor aluno"
+
+var
+  nomes_alunos, melhoraluno: caracter
+  nota, alunos, maior, contador: real
+inicio
+  Escreval("Quantos alunos a turma tem? ")
+  Leia(alunos)
+  contador <- 0
+  Enquanto contador < alunos faca
+    Escreval("Qual o nome do aluno? ")
+    Leia(nomes_alunos)
+    Escreval("Qual a nota do aluno? ")
+    Leia(nota)
+    contador <- contador + 1
+    Se (nota) > (maior) entao
+      maior <- nota
+      melhoraluno <- nomes_alunos
+    fimse
+  fimenquanto
+  Escreval("O melhor aproveitamneto foi de ", melhoraluno " com a nota ", maior)
+fimalgoritmo
