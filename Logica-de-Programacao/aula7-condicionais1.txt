@@ -1,0 +1,40 @@
+//Códigos dos exércicios propostos por ele no fim da aula.
+
+//Exercicio 1 "Está apto a dirigir?"
+
+algoritmo "Dirigir"
+
+var
+    ano_atual, ano_nasc, idade: inteiro
+inicio
+    Escreval("Digite o ano atual (yyyy) ")
+    Leia(ano_atual)
+    Escreval("Digite o ano que você nasceu (yyyy) ")
+    Leia(ano_nasc)
+    idade <- ano_atual-ano_nasc
+    Se idade >= 18 entao
+        Escreva("Você é maior de idade, então está apto a tirar sua carteira de habilitação")
+    Senao
+        Escreva("Você ainda é menor de idade, então não está apto a tirar sua carteira de habilitação")
+    fimse
+fimalgoritmo
+
+
+//Exercicio 2 "Aluno aprovado ou reprovado?"
+
+algoritmo "aprovação"
+
+var
+    nota1, nota2, media: Real
+inicio
+    Escreva("Primeira nota: ")
+    Leia(nota1)
+    Escreva("Segunda nota: ")
+    Leia(nota2)
+    media <- (nota1+nota2)/2
+    Se media >= 7 entao
+        Escreva("Aluno aprovado! a média foi: ", media)
+    Senao
+        Escreva("Aluno reprovado, a média foi: ", media)
+    fimse
+fimalgoritmo
