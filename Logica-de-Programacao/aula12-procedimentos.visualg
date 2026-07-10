@@ -1,0 +1,118 @@
+//Exercicio da aula 12, que é refazer alguns dos códigos antigos usando a estrutura de procedimento.
+
+//Exercicio aula 10 "Super contador"
+
+algoritmo "Super contador"
+var
+  c: inteiro
+  numero: inteiro
+
+procedimento menu()
+inicio
+  Escreval("                                                         ")
+  Escreval("----------------------------")
+  Escreval("      MENU ")
+  Escreval("[1] De 1 a 10 ")
+  Escreval("[2] De 10 a 1 ")
+  Escreval("[3] Sair")
+  Escreval("----------------------------")
+  leia(numero)
+fimprocedimento
+
+procedimento contar()
+inicio
+    repita
+      menu()
+      Se (numero = 1) entao
+        c <- 0
+        repita
+          c <- c + 1
+          Escreva(c, "... ")
+        ate (c = 10)
+      fimse
+      Se (numero = 2) entao
+        c <- 11
+        repita
+          c <- c - 1
+          Escreva(c, "... ")
+        ate (c = 1)
+      fimse
+    ate (numero = 3)
+fimprocedimento
+
+inicio
+c <- 0
+contar()
+fimalgoritmo
+
+
+
+//Exercicio 2 da aula 9 "Melhor aluno da turma"
+
+algoritmo "melhor aluno"
+
+var
+  nomes_alunos, melhoraluno: caracter
+  nota, alunos, maior, contador: real
+
+procedimento checar_notas()
+inicio
+  contador <- 0
+  Enquanto contador < alunos faca
+    Escreval("Qual o nome do aluno? ")
+    Leia(nomes_alunos)
+    Escreval("Qual a nota do aluno? ")
+    Leia(nota)
+    contador <- contador + 1
+    Se (nota) > (maior) entao
+      maior <- nota
+      melhoraluno <- nomes_alunos
+    fimse
+  fimenquanto
+  Escreval("O melhor aproveitamneto foi de ", melhoraluno " com a nota ", maior)
+fimprocedimento
+
+inicio
+  Escreval("Quantos alunos a turma tem? ")
+  Leia(alunos)
+  checar_notas
+fimalgoritmo
+
+//Exercicio 2 aula 11 "Analisador de valores"
+
+algoritmo "valores"
+var
+  c, N, soma, media, div5, nulos, pares: real
+
+procedimento calculo()
+inicio
+  para c de 1 ate 5 faca
+    Escreval("Digite o ", c, " numero: ")
+    Leia(N)
+    soma <- soma + N
+    se (N = 0) entao
+      nulos <- nulos + 1
+    fimse
+    se (N mod 5=0) entao //O % não funcionou
+      div5 <- div5 + 1
+    fimse
+    se (N mod 2=0) entao
+      pares <- pares + 1
+    fimse
+  fimpara
+  media <- soma/5
+fimprocedimento
+
+procedimento resultados()
+inicio
+  escreval("Soma dos valores: ", soma)
+  escreval("Media entre os valores: ", media)
+  escreval("Quantos sao divisiveis por 5: ", div5)
+  escreval("Quantos sao nulos: ", nulos)
+  escreval("Soma dos pares valores pares: ", pares)
+fimprocedimento
+
+inicio
+calculo()
+resultados()
+fimalgoritmo
