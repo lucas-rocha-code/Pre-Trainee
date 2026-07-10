@@ -1,0 +1,65 @@
+//Exercicios da aula 10.
+
+//Exercicio 1 "Super contador"
+
+algoritmo "Super contador"
+var
+  c: inteiro
+  numero: inteiro
+inicio
+    repita
+      Escreval("                                                         ")
+      Escreval("----------------------------")
+      Escreval("      MENU ")
+      Escreval("[1] De 1 a 10 ")
+      Escreval("[2] De 10 a 1 ")
+      Escreval("[3] Sair")
+      Escreval("----------------------------")
+      Leia(numero)
+      Se (numero = 1) entao
+        c <- 0
+        repita
+          c <- c + 1
+          Escreva(c, "... ")
+        ate (c = 10)
+      fimse
+      Se (numero = 2) entao
+        c <- 11
+        repita
+          c <- c - 1
+          Escreva(c, "... ")
+        ate (c = 1)
+      fimse
+    ate (numero = 3)
+fimalgoritmo
+
+//Exercicio 2 "Escolhendo pessoas"
+
+algoritmo "pessoas"
+var
+  sexo, idade, continuar: caracter
+  homens, mulheres, cabelo: inteiro
+inicio
+  repita
+    Escreval("Qual o Sexo? [M/F] ")
+    Leia(sexo)
+    Escreval("Qual a idade? ")
+    Leia(idade)
+    Escreval("Qual a cor do Cabelo? ")
+    Escreval("[1] Preto")
+    Escreval("[2] Castanho")
+    Escreval("[3] Loiro")
+    Escreval("[4] Ruivo")
+    Leia(cabelo)
+    Escreval("Quer continuar? [S/N]")
+    Leia(continuar)
+    Se (sexo = "M") e (idade >= 18) e (cabelo = 2) entao
+      homens <- homens + 1
+    fimse
+    Se (sexo = "F") e (idade > 25) e (idade < 30) e (cabelo = 3) entao
+      mulheres <- mulheres + 1
+    fimse
+  ate (continuar = "N")
+  Escreval("Total de homens com mais de 18 e cabelos castanhos: ", homens)
+  Escreval("Total de mulheres entre 25 e 30 e tem cabelos loiros: ", mulheres)
+fimalgoritmo

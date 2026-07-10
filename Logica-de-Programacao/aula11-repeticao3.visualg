@@ -1,0 +1,46 @@
+//Exercicios da aula 11.
+
+//Exercicio 1 "Sequencia de Fibonccai"
+
+algoritmo "fibonacci"
+var
+  c, primeiro, segundo, fibonacci: inteiro
+inicio
+  primeiro <- 0
+  segundo <- 1
+  para c de 1 ate 15 faca //a estrutura com "<-" que ele usou na aula não funciona mais
+  escreva(primeiro, " ")
+  fibonacci <- primeiro + segundo
+  primeiro <- segundo
+  segundo <- fibonacci
+  fimpara
+fimalgoritmo
+
+
+//Exercicio 2 "Analisador de valores"
+
+algoritmo "valores"
+var
+  c, N, soma, media, div5, nulos, pares: real
+inicio
+  para c de 1 ate 5 faca
+    Escreval("Digite o ", c, " numero: ")
+    Leia(N)
+    soma <- soma + N
+    se (N = 0) entao
+      nulos <- nulos + 1
+    fimse
+    se (N mod 5=0) entao //O % não funcionou
+      div5 <- div5 + 1
+    fimse
+    se (N mod 2=0) entao
+      pares <- pares + 1
+    fimse
+  fimpara
+  media <- soma/5
+  escreval("Soma dos valores: ", soma)
+  escreval("Media entre os valores: ", media)
+  escreval("Quantos sao divisiveis por 5: ", div5)
+  escreval("Quantos sao nulos: ", nulos)
+  escreval("Soma dos pares valores pares: ", pares)
+fimalgoritmo
