@@ -1,0 +1,131 @@
+//Práticas da aula 13.
+
+//Pratica 1
+algoritmo "SomaFuncao"
+
+var
+   V1, V2, S: Inteiro
+
+Funcao soma(X, Y: Inteiro): Inteiro
+Inicio
+   Retorne X + Y
+FimFuncao
+
+inicio
+   escreval("Digite o primeiro valor: ")
+   leia(V1)
+
+   escreval("Digite o segundo valor: ")
+   leia(V2)
+
+   S <- soma(V1, V2)
+
+   escreval("A soma entre ", V1, " e ", V2, " e igual a ", S)
+
+fimalgoritmo
+
+//Pratica 2
+algoritmo "ParImpar"
+
+var
+   N: inteiro
+   R: caractere
+
+funcao ParOuImpar(V: inteiro): caractere
+inicio
+   se (V mod 2 = 0) entao
+      Retorne "PAR"
+   senao
+      Retorne "IMPAR"
+   fimSe
+fimfuncao
+
+inicio
+   escreval("Digite um numero: ")
+   leia(N)
+
+   R <- ParOuImpar(N)
+
+   escreval("O numero ", N, " e um valor ", R)
+
+fimalgoritmo
+
+//Pratica 3
+
+algoritmo "FatorialFuncao"
+
+var
+   N, F: inteiro
+
+funcao Fatorial(V: inteiro): inteiro
+var
+   C, R: inteiro
+
+inicio
+   R <- 1
+
+   para C de 1 ate V faca
+      R <- R * C
+   fimpara
+
+   retorne R
+fimfuncao
+
+inicio
+   escreva("Digite um numero: ")
+   leia(N)
+
+   F <- Fatorial(N)
+
+   escreval("O valor de ", N, "! e igual a ", F)
+
+fimalgoritmo
+
+
+//Prática 4
+
+algoritmo "FibonacciProcedimento"
+var
+   I, T1, T2, T3: inteiro
+funcao ProximoFibonacci(var N1, N2: inteiro): inteiro
+var
+   N3: inteiro
+inicio
+   N3 <- N1 + N2
+   N1 <- N2
+   N2 <- N3
+   retorne N3
+fimfuncao
+inicio
+   T1 <- 0
+   escreval(T1)
+   T2 <- 1
+   escreval(T2)
+   para I de 3 ate 5 faca
+      T3 <- ProximoFibonacci(T1, T2)
+      escreval(T3)
+   fimpara
+fimalgoritmo
+
+//Pratica 5
+
+algoritmo "AnalisadorStrings"
+var
+   N: caractere
+   C: inteiro
+inicio
+   escreva("Digite seu nome: ")
+   leia(N)
+   escreval("Total de letras do seu nome: ", Compr(N))
+   escreval("Seu nome em maiusculas e ", Maiusc(N))
+   escreval("Seu nome em minusculas e ", Minusc(N))
+   escreval("A primeira letra do seu nome e ", Copia(N, 1, 1))
+   escreval("A ultima letra do seu nome e ", Copia(Maiusc(N), Compr(N), 1))
+   escreval("Seu nome tem a letra A na posicao ", pos("a", minusc(N)))
+   escreval("O codigo da letra A e ", Asc("A"))
+   escreval("A letra de codigo 65 e ", Carac(65))
+
+   para C de Compr(N) ate 1 passo -1 faca
+      escreva(Copia(Maiusc(N), C, 1))
+   fimpara
+fimalgoritmo
