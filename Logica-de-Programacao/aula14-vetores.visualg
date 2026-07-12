@@ -1,0 +1,101 @@
+//Exércicios da aula 14.
+
+//Exércicio 1 "Torneio de futebol"
+
+algoritmo "Futebol"
+var
+  time: vetor[1..3] de caracter
+  i, j: inteiro
+inicio
+  escreval("CAMPEONATO FUTEBOL")
+  para i de 1 ate 3 faca
+    escreva("Nome do ", i, "o. time: ")
+    leia(time[i])
+  fimpara
+
+  limpatela
+  escreval(" TABELA DE PARTIDAS")
+  para i de 1 ate 3 faca
+    para j de 1 ate 3 faca
+      se (i <> j) entao
+        escreval(time[i]:12, " [ ] x [ ] ", time[j]:12)
+      fimse
+    fimpara
+  fimpara
+fimalgoritmo
+
+//Exércicio 2 "Corrigindo Provas"
+
+algoritmo "Provas"
+var
+  gabarito: vetor[1..5] de caracter
+  prova: vetor[1..5] de caracter
+  nome: vetor[1..3] de caracter
+  nota: vetor[1..3] de real
+  i, j: inteiro
+  S_turma, M_turma, nota_aluno: real
+inicio
+  escreval("Cadastro de Gabarito")
+  escreval("------------------------------")
+  para i de 1 ate 5 faca
+    escreva("Questao ", i, ": ")
+    leia(gabarito[i])
+  fimpara
+  para i de 1 ate 3 faca
+    limpatela
+    escreval("------------------------")
+    escreval("ALUNO ", i)
+    escreval("------------------------")
+    escreval("Nome: ")
+    leia(nome[i])
+    nota_aluno <- 0
+    para j de 1 ate 5 faca
+      escreval("Questao ", j, ": ")
+      leia(prova[j])
+      Se (Maiusc(prova[j]) = Maiusc(gabarito[j])) entao
+        nota_aluno <- nota_aluno + 2
+      fimse
+    fimpara
+    nota[i] <- nota_aluno
+    S_turma <- S_turma + nota[i]
+  fimpara
+  limpatela
+  escreval("NOTAS FINAIS")
+  para i de 1 ate 3 faca
+    escreval(nome[i], " ", nota[i])
+  fimpara
+  M_turma <- S_turma / 3
+  escreval("Media da Turma: ", M_turma:4:1)
+fimalgoritmo
+
+//Exércicio 3 "Reservar Espaço no Cinema"
+
+algoritmo "Cinema"
+var
+  cadeira: vetor[1..10] de logico
+  cad, i: inteiro
+  resp: caractere
+inicio
+  repita
+    limpatela
+    para i de 1 ate 10 faca
+      se (cadeira[i] = falso) entao
+        escreva("[ B", i, " ]")
+      senao
+        escreva("[ --- ]")
+      fimse
+    fimpara
+    escreval("")
+    escreval("------------------------------------------------------------------------")
+    escreva("Reservar a cadeira: B")
+    leia(cad)
+    se (cadeira[cad] = verdadeiro) entao
+      escreval(" ERRO: Lugar Ocupado!")
+    senao
+      escreval("Cadeira B", cad, " RESERVADA!")
+      cadeira[cad] <- verdadeiro
+    fimse
+    escreva("Quer reservar outro lugar? [S/N] ")
+    leia(resp)
+  ate (Maiusc(resp) = "N")
+fimalgoritmo

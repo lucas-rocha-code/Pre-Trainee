@@ -1,0 +1,192 @@
+//Exercicios finais do curso, aula 15.
+
+//Exercicio 1 "Disecando Matrizes"
+
+algoritmo "matrizes"
+var
+  mat: vetor[1..4,1..4] de inteiro
+  l, c, opcao, pos1: inteiro
+inicio
+  para l de 1 ate 4 faca
+    para c de 1 ate 4 faca
+      escreval("Digite valor para a posicao [", l, ",", c, "]: ")
+      leia(pos1)
+      mat[l,c] <- pos1
+    fimpara
+  fimpara
+  repita
+    escreval("    MENU DE OPÇÕES     ")
+    escreval("=======================")
+    escreval("[1] Mostrar a Matriz inteira")
+    escreval("[2] Diagonal Principal")
+    escreval("[3] Triangulo Superior")
+    escreval("[4] Triangulo Inferior")
+    escreval("[5] Sair")
+    escreval("=======================")
+    escreva("OPÇÃO: ")
+    leia(opcao)
+    limpatela
+
+    escolha opcao
+      caso 1
+        escreval("=======================")
+        escreval("     MATRIZ INTEIRA    ")
+        escreval("=======================")
+        para l de 1 ate 4 faca
+          para c de 1 ate 4 faca
+            escreva(mat[l,c], " ") 
+          fimpara
+          escreval()
+        fimpara
+
+      caso 2
+        escreval("=======================")
+        escreval("  DIAGONAL PRINCIPAL   ")
+        escreval("=======================")
+        para l de 1 ate 4 faca
+          para c de 1 ate 4 faca
+            se (l = c) entao
+              escreva(mat[l,c], " ")
+            senao
+              escreva("    ")
+            fimse
+          fimpara
+          escreval()
+        fimpara
+
+      caso 3
+        escreval("=======================")
+        escreval("  TRIANGULO SUPERIOR   ")
+        escreval("=======================")
+        para l de 1 ate 4 faca
+          para c de 1 ate 4 faca
+            se (c > l) entao
+              escreva(mat[l,c], " ")
+            senao
+              escreva("    ")
+            fimse
+          fimpara
+          escreval()
+        fimpara
+
+      caso 4
+        escreval("=======================")
+        escreval("  TRIANGULO INFERIOR   ")
+        escreval("=======================")
+        para l de 1 ate 4 faca
+          para c de 1 ate 4 faca
+            se (l > c) entao
+              escreva(mat[l,c], " ")
+            senao
+              escreva("    ")
+            fimse
+          fimpara
+          escreval()
+        fimpara
+
+      caso 5
+        escreval("Saindo...")
+    fimescolha
+    escreval("")
+  ate (opcao = 5)
+fimalgoritmo
+
+//Exercicio 2 "jogo da Velha"
+
+algoritmo "Velha"
+var
+   v: vetor[1..3, 1..3] de caractere
+   l, c, cont, pos: inteiro
+   simbolo: caractere
+   terminou: logico
+procedimento mostraVelha
+inicio
+   escreval("+---+---+---+")
+   para l de 1 ate 3 faca
+      para c de 1 ate 3 faca
+         escreva("| ", v[l,c]:1)
+      fimpara
+      escreval("|")
+      escreval("+---+---+---+")
+   fimpara
+fimprocedimento
+procedimento jogar(s: caractere, p: inteiro)
+var
+   mudou: logico
+   alvo: caractere
+inicio
+   mudou <- falso
+   alvo <- numpcarac(p)
+   para l de 1 ate 3 faca
+      para c de 1 ate 3 faca
+         se (v[l,c] = alvo) entao
+            v[l,c] <- s
+            mudou <- verdadeiro
+         fimse
+      fimpara
+   fimpara
+   se (mudou = falso) entao
+      escreval("JOGADA INVALIDA!")
+   fimse
+fimprocedimento
+funcao verificaVencedor(): logico
+var
+   ganhou: logico
+inicio
+   ganhou <- falso
+   para l de 1 ate 3 faca
+      se (v[l,1] = v[l,2]) e (v[l,2] = v[l,3]) entao
+         ganhou <- verdadeiro
+      fimse
+   fimpara
+   para c de 1 ate 3 faca
+      se (v[1,c] = v[2,c]) e (v[2,c] = v[3,c]) entao
+         ganhou <- verdadeiro
+      fimse
+   fimpara
+   se (v[1,1] = v[2,2]) e (v[2,2] = v[3,3]) entao
+      ganhou <- verdadeiro
+   fimse
+   se (v[1,3] = v[2,2]) e (v[2,2] = v[3,1]) entao
+      ganhou <- verdadeiro
+   fimse
+   retorne ganhou
+fimfuncao
+
+inicio
+   cont <- 1
+   para l de 1 ate 3 faca
+      para c de 1 ate 3 faca
+         v[l,c] <- numpcarac(cont)
+         cont <- cont + 1
+      fimpara
+   fimpara
+   terminou <- falso
+   cont <- 1
+   simbolo <- "X"
+   repita
+      limpatela
+      mostraVelha
+      escreval("")
+      escreva("Vai jogar ", simbolo, " em qual posicao? ")
+      leia(pos)
+      jogar(simbolo, pos)
+      terminou <- verificaVencedor()
+      se (terminou = falso) entao
+         cont <- cont + 1
+         se (simbolo = "X") entao
+            simbolo <- "O"
+         senao
+            simbolo <- "X"
+         fimse
+      fimse
+   ate (terminou = verdadeiro) ou (cont > 9)
+   limpatela
+   mostraVelha
+   escreval("")
+   se (terminou = verdadeiro) entao
+      escreval("JOGO FINALIZADO! Vencedor: ", simbolo)
+   senao
+      escreval("JOGO FINALIZADO! DEU VELHA!")
+   fimse
+fimalgoritmo
