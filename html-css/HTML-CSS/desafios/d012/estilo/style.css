@@ -1,0 +1,99 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playwrite+NZ+Basic:wght@100..400&display=swap');
+
+header {
+    background-color: black;
+    margin: auto;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.466);
+    font-family: "JetBrains Mono", monospace;
+}
+
+header > h1 {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 4vw;
+}
+
+header > h3 {
+    color: white;
+    text-align: center;
+    font-weight: normal;
+}
+
+#credito {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#credito:hover {
+    color: rgb(189, 188, 188);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+article{
+    padding: 10px;
+}
+
+.estrofe {
+    font-family: "Playwrite NZ Basic";
+    font-weight: normal;
+    font-size: clamp(2vw, 3vw, 5vw);
+}
+
+.estrofe_fundo1 {
+    font-family: "Playwrite NZ Basic";
+    font-weight: normal;
+    font-size: clamp(2vw, 3vw, 4vw);
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../imagens/background001.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.089);
+    border-radius: 15px;
+}
+
+.estrofe_fundo2 {
+    font-family: "Playwrite NZ Basic";
+    font-weight: normal;
+    font-size: clamp(2vw, 3vw, 5vw);
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../imagens/background002.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.089);
+    border-radius: 15px;
+}
+
+.fundo{
+    display: inline-block;
+    padding: 10vw;
+    background-color: rgba(0,0,0,.45);
+    color: white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.089);
+    border-radius: 15px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.452);
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+footer > h2 {
+    padding-top: 15px;
+}
+footer > p {
+    padding-bottom: 15px;
+}
